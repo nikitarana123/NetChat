@@ -9,5 +9,4 @@ connection, address = server.accept()
 print("Client connected:",address)
 message = connection.recv(1024).decode()
 print(message)
-connection.close()
-
+connection.send("Welcome!" .encode())
