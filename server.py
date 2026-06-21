@@ -6,7 +6,7 @@ server.listen()
 print("Server is listening...")
 
 connection, address = server.accept()
-print("Client connected")
+print("Client connected:",address)
 message = connection.recv(1024).decode()
 print(message)
 
