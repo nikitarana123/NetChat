@@ -1,0 +1,74 @@
+2026-06-23 23:54:35,592 - Client connected: ('127.0.0.1', 54572)
+2026-06-23 23:54:43,750 - Client connected: ('127.0.0.1', 54573)
+2026-06-23 23:55:00,028 - Username: Ramanpreet
+2026-06-23 23:55:02,317 - Username: Nikita Rana
+2026-06-23 23:55:08,105 - Nikita Rana: Hello
+2026-06-23 23:55:11,257 - Ramanpreet: Hi
+2026-06-23 23:55:19,045 - Nikita Rana: how are you
+2026-06-23 23:55:23,250 - Ramanpreet: i am fine
+2026-06-24 00:05:14,051 - Client connected: ('127.0.0.1', 49277)
+2026-06-24 00:05:19,194 - Username: Raman
+2026-06-24 00:06:58,914 - Client connected: ('127.0.0.1', 61527)
+2026-06-24 00:07:01,530 - Username: Raman
+2026-06-24 00:07:09,863 - Client connected: ('127.0.0.1', 61530)
+2026-06-24 00:07:17,720 - Client connected: ('127.0.0.1', 61532)
+2026-06-24 00:07:23,215 - Username: Raman
+2026-06-24 00:07:38,106 - Username: Alice
+2026-06-24 00:09:08,256 - Raman: Users
+2026-06-24 00:11:20,628 - Client connected: ('127.0.0.1', 64160)
+2026-06-24 00:11:27,695 - Username: Nikita
+2026-06-24 00:11:37,917 - Client connected: ('127.0.0.1', 64176)
+2026-06-24 00:11:45,090 - Client connected: ('127.0.0.1', 64177)
+2026-06-24 00:11:53,980 - Nikita: Raman
+2026-06-24 00:11:57,553 - Username: Bob
+2026-06-24 00:12:03,618 - Username: Nikita
+2026-06-24 00:12:10,739 - Nikita: USERS
+2026-06-24 00:14:44,672 - Bob: ROOMS
+2026-06-24 00:16:58,172 - Nikita: INVITE|Bob>General
+2026-06-24 00:17:59,751 - Nikita: INVITE|Bob|General
+2026-06-24 00:19:30,071 - Client connected: ('127.0.0.1', 54562)
+2026-06-24 00:19:34,891 - Username: Raman
+2026-06-24 00:19:51,201 - Nikita: INVITE|Bob|Raman|General
+2026-06-24 00:20:23,631 - Nikita: INVITE|Bob|Raman|General
+2026-06-24 00:21:06,942 - Client connected: ('127.0.0.1', 64792)
+2026-06-24 00:21:14,226 - Client connected: ('127.0.0.1', 64795)
+2026-06-24 00:21:21,246 - Client connected: ('127.0.0.1', 64796)
+2026-06-24 00:21:24,665 - Username: Nikita
+2026-06-24 00:21:27,945 - Username: Rana
+2026-06-24 00:21:34,657 - Username: Raman
+2026-06-24 00:22:35,277 - Nikita: ROOMS
+2026-06-24 00:24:09,180 - Rana: INVITE|Nikita|Raman|General
+2026-06-24 00:24:50,020 - Rana: |General
+2026-06-24 00:26:06,045 - Client connected: ('127.0.0.1', 58434)
+2026-06-24 00:26:12,437 - Client connected: ('127.0.0.1', 58436)
+2026-06-24 00:26:39,984 - Client connected: ('127.0.0.1', 58438)
+2026-06-24 00:27:02,417 - Username: Nikita
+2026-06-24 00:27:06,151 - Username: Raman
+2026-06-24 00:27:11,151 - Username: Bob
+2026-06-24 00:27:39,361 - Nikita: USERS
+2026-06-24 00:28:20,320 - Raman: ROOMS
+2026-06-24 00:29:20,275 - Bob: INVITE|Nikita|Raman|General
+2026-06-24 00:30:07,043 - Raman: INVITE|Nikita|Bob|General
+2026-06-24 00:31:16,314 - Client connected: ('127.0.0.1', 58913)
+2026-06-24 00:31:20,367 - Username: Nikita
+2026-06-24 00:31:32,781 - Client connected: ('127.0.0.1', 58914)
+2026-06-24 00:31:35,926 - Username: Raman
+2026-06-24 00:31:52,310 - Client connected: ('127.0.0.1', 58916)
+2026-06-24 00:31:57,294 - Username: Bob
+2026-06-24 00:32:05,948 - Nikita: USERS
+2026-06-24 00:32:46,726 - Nikita: INVITE|Raman|General
+2026-06-24 00:33:27,058 - Nikita: INVITE|Bob|General
+2026-06-24 00:33:57,649 - Nikita: INVITE|Bob|Raman|General
+2026-06-24 00:34:03,803 - Nikita: hello
+2026-06-24 00:34:10,824 - Raman: hi
+2026-06-24 00:34:14,724 - Raman: hello
+2026-06-24 00:34:19,588 - Bob: hi
+2026-06-24 00:35:12,417 - Client connected: ('127.0.0.1', 56506)
+2026-06-24 00:35:25,239 - Client connected: ('127.0.0.1', 56507)
+2026-06-24 00:35:32,539 - Client connected: ('127.0.0.1', 56508)
+2026-06-24 00:35:38,015 - Username: Nikita
+2026-06-24 00:35:42,520 - Username: Raman
+2026-06-24 00:35:46,054 - Username: Bob
+2026-06-24 00:35:50,783 - Nikita: USERS
+2026-06-24 00:36:11,391 - Nikita: INVITE|Raman|General
+2026-06-24 00:36:32,191 - Nikita: INVITE|Bob|General
