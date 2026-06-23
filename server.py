@@ -137,7 +137,16 @@ def handle_client(connection, address):
                            ("User not found").encode()
                         )
 
-                continue
+                continue  
+            if message == "USERS":
+
+               user_list = ", ".join(client_by_name.keys())
+
+               connection.send(
+                 ("Connected users: " + user_list).encode()
+               )
+
+            continue
             
             #Broadcasting
 
