@@ -17,7 +17,9 @@ PORT = config["port"]
 BUFFER_SIZE = config["buffer_size"]
 DEFAULT_ROOM = config["default_room"]
 clients = []
+
 usernames = {}
+client_by_name = {}
 
 rooms = {
     DEFAULT_ROOM: []
@@ -42,6 +44,7 @@ def handle_client(connection, address):
     print("Username:", username)
     logging.info(f"Username: {username}")
     usernames[connection] = username    
+    client_by_name[username] = connection
     user_rooms[connection] = DEFAULT_ROOM
     connection.send("Welcome!".encode())
 
@@ -108,6 +111,33 @@ def handle_client(connection, address):
                          ("Room does not exist").encode()
                      )
                continue
+            if message.startswith("INVITE|"):
+
+                parts = message.split("|")
+                if len(parts) == 3:
+
+                   invited_user = parts[1]
+                   room_name = parts[2]
+
+                   if invited_user in client_by_name:
+
+                       invited_connection = client_by_name[invited_user]
+
+                       invited_connection.send(
+                          (username + " invited you to " + room_name).encode()
+                        )
+
+                       connection.send(
+                          ("Invitation sent to " + invited_user).encode()
+                       )
+
+                   else:
+
+                        connection.send(
+                           ("User not found").encode()
+                        )
+
+                continue
             
             #Broadcasting
 
