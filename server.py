@@ -83,23 +83,29 @@ def handle_client(connection, address):
                     ("Joined room: " + room_name).encode()
                  )
 
-                else:
+               else:
 
                      connection.send(
                          ("Room does not exist").encode()
                      )
-                continue
+               continue
             
             #Broadcasting
-            for client in clients:
-                 if client != connection:
-                     try:
-                         client.send(
-                           (username + ": " + message).encode()
 
+            current_room = user_rooms[connection]
+            for client in rooms[current_room]:
+
+                 if client != connection:
+
+                     try:
+
+                         client.send(
+                              (username + ": " + message).encode()
                         )
+
                      except:
-                            pass
+
+                          pass
 
         except:
             break
