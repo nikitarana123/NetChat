@@ -1,17 +1,31 @@
 # NetConnect Server
 import socket
 import threading
+import logging
+import json
 
+logging.basicConfig(
+    filename="logs/server.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(message)s"
+)
+with open("config.json", "r") as file:
+    config = json.load(file)
+
+HOST = config["host"]
+PORT = config["port"]
+BUFFER_SIZE = config["buffer_size"]
+DEFAULT_ROOM = config["default_room"]
 clients = []
 usernames = {}
 
 rooms = {
-    "General": []
+    DEFAULT_ROOM: []
 }
 user_rooms = {}
     
 server =socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(("127.0.0.1", 55555))
+server.bind((HOST, PORT))
 
 server.listen()
 
@@ -21,12 +35,14 @@ print("Server is listening...")
 def handle_client(connection, address):
 
     print("Client connected:", address)
+    logging.info(f"Client connected: {address}")
 
     username = connection.recv(1024).decode()
 
     print("Username:", username)
+    logging.info(f"Username: {username}")
     usernames[connection] = username    
-    user_rooms[connection] = "General"
+    user_rooms[connection] = DEFAULT_ROOM
     connection.send("Welcome!".encode())
 
     while True:
@@ -38,6 +54,7 @@ def handle_client(connection, address):
                 break
 
             print(username + ": " + message)
+            logging.info(username + ": " + message)
             if message == "ROOMS":
                
                room_list = ", ".join(rooms.keys())
@@ -53,6 +70,7 @@ def handle_client(connection, address):
 
               if room_name not in rooms:
                  rooms[room_name] = []
+                 logging.info(f"Room created: {room_name}")
 
                  connection.send(
                   ("Room created: " + room_name).encode()
@@ -78,6 +96,7 @@ def handle_client(connection, address):
                  rooms[room_name].append(connection)
 
                  user_rooms[connection] = room_name
+                 logging.info(f"{username} joined room: {room_name}")
 
                  connection.send(
                     ("Joined room: " + room_name).encode()
@@ -121,7 +140,7 @@ while True:
 
     clients.append(connection)
 
-    rooms["General"].append(connection)
+    rooms[DEFAULT_ROOM].append(connection)
 
     thread = threading.Thread(
         target=handle_client,
