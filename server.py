@@ -146,7 +146,7 @@ def handle_client(connection, address):
                  ("Connected users: " + user_list).encode()
                )
 
-            continue
+               continue
             
             #Broadcasting
 
